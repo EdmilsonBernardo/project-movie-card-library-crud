@@ -9,15 +9,16 @@ import { Loading } from '../components';
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
+
     this.fetchMovie = this.fetchMovie.bind(this);
+
     const { match: { params: { id } } } = this.props;
+
     this.state = {
       movie: '',
       status: false,
       id,
     };
-
-    console.log(this.props);
   }
 
   componentDidMount() {
@@ -38,14 +39,10 @@ class MovieDetails extends Component {
   }
 
   render() {
-    // Change the condition to check the state
-    // if (true) return <Loading />;
     const { status, movie } = this.state;
     if (status) { return <Loading />; }
 
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
-    console.log('Props', this.props);
-    console.log('State', this.state);
     const { id } = this.state;
 
     return (
