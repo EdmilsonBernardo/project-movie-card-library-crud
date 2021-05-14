@@ -1,5 +1,175 @@
 body {
-  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #222831;
   box-sizing: border-box;
 }
 
+.c-loader {
+  animation: is-rotating 1s infinite;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 6px solid #fd7014;
+  border-top-color: #222831;
+}
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 51px;
+}
+
+.card {
+  flex: 1 0 250px;
+  box-sizing: border-box;
+  margin: 1rem .25em;
+  position: relative;
+  cursor: pointer;
+}
+
+.card:after,
+.card:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: transform .3s ease-in-out;
+}
+
+.card:before {
+  border-left: 2px solid #393E46;
+  border-right: 2px solid #393E46;
+  transform: scaleY(0);
+}
+
+.card:after {
+  border-top: 2px solid #393E46;
+  border-bottom: 2px solid #393E46;
+  transform: scaleX(0);
+}
+
+.card:hover:before {
+  transform: scaleY(1);
+}
+
+.card:hover:after {
+  transform: scaleX(1);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #EEEEEE;
+}
+
+.details {
+  background-color: #222831;
+  color: #fd7014;
+}
+
+.details:hover {
+  color: #EEEEEE;
+}
+
+#header {
+  background-color: #393E46;
+}
+
+#add {
+  margin: 5px;
+  background-color: #fd7014;
+  border: none;
+  color: #222831;
+  margin-top: 51px;
+}
+
+#add:hover {
+  color: #fd7014;
+  background-color: #393E46;
+}
+
+.buttons-details-page {
+  margin: 5px;
+  background-color: #393E46;
+  border: none;
+  color: #fd7014;
+}
+
+.buttons-details-page:hover {
+  color: #EEEEEE;
+}
+
+.buttons-container {
+  text-align: center;
+}
+
+.navbar-link {
+  color: #fd7014;
+  font-size: small;
+}
+
+.navbar-link:focus {
+  color: #fd7014;
+}
+
+.navbar-link:hover {
+  color: #EEEEEE;
+}
+
+#card-details {
+  width: 600px;
+}
+
+#card-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;
+  padding-right: 30px;
+  border-radius: 5%;
+  width: 450px;
+  height: 400px;
+  background-color: #fd7014;
+  color: #393E46;
+}
+
+#button-submit {
+  background-color: #EEEEEE;
+  color: #393E46;
+  border: none;
+}
+
+#button-submit:hover {
+  background-color: #393E46;
+  color: #fd7014;
+}
+
+#title-app {
+  margin: 10px;
+  font-size: x-large;
+  color: #fd7014;
+}
